@@ -412,3 +412,138 @@ console.log(sum); // NaN
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+Types of Operators in JavaScript:
+1) Arithmetic Operators: Used for mathematical operations.
+// Example: +, -, *, /, %, ** (exponentiation)
+let a = 10;
+let b = 5;
+let sum = a + b; // Addition output: 15
+let difference = a - b; // Subtraction output: 5
+let product = a * b; // Multiplication output: 50
+let quotient = a / b; // Division output: 2
+let remainder = a % b; // Modulus (remainder of division) output: 0
+let exponentiation = a ** b; // Exponentiation (a raised to the power of b) output: 100000
+
+2) Comparision Operators: Used to compare values and return a boolean result.
+// Example: ==, ===, !=, !==, <, >, <=, >=
+let x = 10;
+let y = 5;
+let isEqual = x == y; // Loose equality (type coercion allowed) output: false
+let isStrictEqual = x === y; // Strict equality (no type coercion) output: false
+let isNotEqual = x != y; // Loose inequality (type coercion allowed) output: true
+let isStrictNotEqual = x !== y; // Strict inequality (no type coercion) output: true
+let isLessThan = x < y; // Less than output: false
+let isGreaterThan = x > y; // Greater than output: true
+let isLessThanOrEqual = x <= y; // Less than or equal output: false
+let isGreaterThanOrEqual = x >= y; // Greater than or equal output: true
+
+3) Assignment Operators: Used to assign values to variables.
+// Example: =, +=, -=, *=, /=, %=, **=
+let z = 10; // Assignment
+z += 5; // Equivalent to z = z + 5; output: 15
+z -= 3; // Equivalent to z = z - 3; output: 12
+z *= 2; // Equivalent to z = z * 2; output: 24
+z /= 4; // Equivalent to z = z / 4; output: 6
+z %= 5; // Equivalent to z = z % 5; output: 1
+z **= 3; // Equivalent to z = z ** 3; output: 1
+
+4) Logical Operators: Used to perform logical operations and return a boolean result.
+// Example: && (AND), || (OR), ! (NOT)
+let a = 5;
+let b = 10;
+let c = 15;
+let andResult = (a < b) && (b < c); // AND operation output: true
+let orResult = (a > b) || (b < c); // OR operation output: true
+let notResult = !(a < b); // NOT operation output: false
+
+5) Unary Operators: Operate on a single operand.
+// Example: + (unary plus), - (unary minus), ++ (increment), -- (decrement), typeof, void
+let d = 5;
+let unaryPlus = +d; // Unary plus (converts to number) output: 5
+let unaryMinus = -d; // Unary minus (negates the value) output: -5
+d++; // Increment (postfix) output: 6   
+d--; // Decrement (postfix) output: 5
+let typeofResult = typeof d; // Returns the type of the variable output: "number"
+let voidResult = void 0; // Returns undefined output: undefined
+
+// ++a and a++ are both increment operators, but they differ in when the increment occurs.
+// ++a (prefix increment) increments the value of `a` before using it in an expression.
+let e = 5;
+let prefixIncrement = ++e; // e is incremented to 6, then used in the expression output: 6
+// a++ (postfix increment) uses the current value of `a` in the expression
+// before incrementing it.
+let f = 5;  
+let postfixIncrement = f++; // f is used as 5 in the expression, then incremented to 6 output: 5
+// Example of prefix and postfix increment:
+let g = 5;
+let prefixResult = ++g; // g is incremented to 6, then used in the expression output: 6
+let h = 5;
+let postfixResult = h++; // h is used as 5 in the expression, then incremented to 6 output: 5
+// Note: The same applies to the decrement operator (--) as well.
+
+let a = 5;
+a++; // Postfix increment (a is used as 5, then incremented to 6) 
+console.log(a); // Output: 6
+
+//If we use + before a string, it will convert the string to a number if possible.
+let str = "10";
+let convertedNumber = +str; // Converts string to number output: 10
+// If the string cannot be converted to a number, it will result in NaN (Not a Number).
+// Example of NaN:
+let invalidStr = "abc";
+let invalidConversion = +invalidStr; // Converts string to number output: NaN
+
+6) Ternary Operator: A shorthand way to write an if-else statement.
+// Example: condition ? expressionIfTrue : expressionIfFalse
+let age = 18;
+let isAdult = (age >= 18) ? "Adult" : "Minor"; // Output: "Adult"
+
+// In this example, if `age` is greater than or equal to 18, `isAdult` will be "Adult",
+// otherwise, it will be "Minor". The ternary operator provides a concise way to write
+// conditional expressions without using a full if-else statement.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+->typeof and instanceof operators
+// The `typeof` operator is used to determine the type of a variable or expression.
+// It returns a string representing the type of the operand.
+// Example:
+let num = 42;
+let str = "Hello, World!";
+let isTrue = true;
+console.log(typeof num); // "number"
+console.log(typeof str); // "string"
+console.log(typeof isTrue); // "boolean"
+typeof NaN; // "number" (NaN is considered a numeric type in JavaScript)
+typeof []; // "object" (arrays are considered objects in JavaScript)
+typeof null; // "object" (null is a special value in JavaScript that represents the absence of any object)
+typeof undefined; // "undefined" (indicates that a variable has been declared but not assigned
+// The `typeof` operator is particularly useful for checking the type of variables and ensuring that they hold the expected data types.
+
+// Instance of means if something is root or family of something.
+// The `instanceof` operator is used to check if an object is an instance of a specific constructor or class.
+// It returns a boolean value indicating whether the object is an instance of the specified constructor.
+// Example:
+class Person {
+    constructor(name) {
+        this.name = name;
+    }
+}   
+let john = new Person("John");
+console.log(john instanceof Person); // true    
+console.log(john instanceof Object); // true (all objects are instances of Object)
+console.log(john instanceof Array); // false (john is not an instance of Array)
+// The `instanceof` operator is particularly useful for checking the type of objects created from custom classes or constructors.
+// It allows you to determine if an object belongs to a specific class or constructor, which can be helpful for type checking and ensuring that the object has the expected properties and methods.
+// Example of instanceof:
+let arr = [1,2,3];
+console.log(arr instanceof Array); // true (arr is an instance of Array)
+console.log(arr instanceof Object); // true (all arrays are also objects)
+console.log(arr instanceof String); // false (arr is not an instance of String)
+console.log(arr instanceof Number); // false (arr is not an instance of Number)
+
+//instanceof works with only reference data types, not primitive data types.
+let a= 10;
+consoole.log(a instanceof Number); // false (a is a primitive number, not an object)
+let b = new Number(10);
+console.log(b instanceof Number); // true (b is an instance of Number object)
