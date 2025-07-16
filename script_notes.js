@@ -546,4 +546,79 @@ console.log(arr instanceof Number); // false (arr is not an instance of Number)
 let a= 10;
 consoole.log(a instanceof Number); // false (a is a primitive number, not an object)
 let b = new Number(10);
-console.log(b instanceof Number); // true (b is an instance of Number object)
+console.log(b instanceof Number); // true (b is an instance of Number object)   
+                                 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Flow Statements in JavaScript:
+// Control flow statements are used to control the execution of code based on certain conditions.
+// They allow you to make decisions, repeat actions, and handle different scenarios in your code.
+1) Conditional Statements: Used to execute code based on certain conditions.
+// Example: if, else if, else, switch
+// in switch statement, Breaak statement is used to exit the switch block after executing a case.
+// if this break is not used, then it will execute all the cases after the matched case until it finds a break statement or reaches the end of the switch block.
+
+Early return pattern 
+// Early return pattern is a coding technique used to simplify conditional logic by returning early from a function when a certain condition is met.
+// This pattern helps to reduce nesting and improve code readability.
+// Example of early return pattern:
+function checkAge(age) {
+    if (age < 18) {
+        return "You are a minor.";
+    }
+    return "You are an adult.";
+}
+// In this example, if the `age` is less than 18, the function returns early with the message "You are a minor.".
+// If the condition is not met, it continues to the next line and returns "You are an adult.".
+// This pattern allows you to handle specific conditions without deeply nesting your code, making it easier to read and maintain.
+// Example of early return pattern in a loop:  
+function getGrade(score) {
+    if(score >= 90 && score<=100) return "A";
+    if(score >= 80 && score < 90) return "B";
+    if(score >= 70 && score < 80) return "C";
+    if(score >= 60 && score < 70) return "D";
+    if(score >= 50 && score < 60) return "E";
+    if(score >= 40 && score < 50) return "F";
+    return "Invalid Score"; // Handle invalid scores
+}
+getGrade(66)
+output:
+console.log(getGrade(66)); // "D"
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Loops: Used to repeat a block of code multiple times.
+// Example: for, while, do-while, for...in, for...of , forEach                                   
+//while loop: 
+let i = 0;    // initialization
+while (i < 5) {    // condition
+    console.log(i); // Output: 0, 1, 2, 3, 4
+    i++;    // increment
+}
+// do-while loop: works at least once, even if the condition is false.
+let j = 0;    // initialization
+do {
+    console.log(j); // Output: 0, 1, 2, 3, 4
+    j++;    // increment
+}while (j < 5);    // condition
+
+Break and Continue Statements: Used to control the flow of loops.
+// Example: break, continue
+// The `break` statement is used to exit a loop or switch statement prematurely.
+// The `continue` statement is used to skip the current iteration of a loop and move to the next iteration.
+// Example of break statement:
+for (let k = 0; k < 10; k++) {
+    if (k === 5) {
+        break; // Exit the loop when k is 5
+    }
+    console.log(k); // Output: 0, 1, 2, 3, 4
+}
+// Example of continue statement:
+for (let l = 0; l < 10; l++) {
+    if (l === 5) {
+        continue; // Skip the iteration when l is 5
+    }
+    console.log(l); // Output: 0, 1, 2, 3, 4, 6, 7, 8, 9
+}
+
+
