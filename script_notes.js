@@ -546,79 +546,60 @@ console.log(arr instanceof Number); // false (arr is not an instance of Number)
 let a= 10;
 consoole.log(a instanceof Number); // false (a is a primitive number, not an object)
 let b = new Number(10);
-console.log(b instanceof Number); // true (b is an instance of Number object)   
-                                 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+console.log(b instanceof Number); // true (b is an instance of Number object)
 
-Control Flow Statements in JavaScript:
-// Control flow statements are used to control the execution of code based on certain conditions.
-// They allow you to make decisions, repeat actions, and handle different scenarios in your code.
-1) Conditional Statements: Used to execute code based on certain conditions.
-// Example: if, else if, else, switch
-// in switch statement, Breaak statement is used to exit the switch block after executing a case.
-// if this break is not used, then it will execute all the cases after the matched case until it finds a break statement or reaches the end of the switch block.
+-----------------------------------------------------------------------------------------------------------------------------------------------
 
-Early return pattern 
-// Early return pattern is a coding technique used to simplify conditional logic by returning early from a function when a certain condition is met.
-// This pattern helps to reduce nesting and improve code readability.
-// Example of early return pattern:
-function checkAge(age) {
-    if (age < 18) {
-        return "You are a minor.";
-    }
-    return "You are an adult.";
+Functions in JavaScript:
+// Functions are reusable blocks of code that can be called with a specific set of parameters.
+// Code inside a function is executed when the function is called.
+// code is not executed until the function is called.
+// Execution of code not immediately, but for future use.
+// Functions can take parameters and return values.
+// Example of a simple function:
+function dance(){
+    console.log("I am dancing");
+    console.log("I am dancing again");
+} // program not executed yet, just declared
+dance(); // program executed, function called
+// In this example, the function `dance` is declared, but the code inside it is
+// not executed until the function is called with `dance()`. When called, it prints "I am dancing" and "I am dancing again" to the console.
+// Output:
+// I am dancing
+// I am dancing again
+
+//USECASE OF FUNCTIONS
+// we have a code and we dont want to execute it immediately, but we want to use it in future.
+
+// We can call the function multiple times, and it will execute the code inside it each time it is called.
+// Example of calling the function multiple times:
+function greet(name) {
+    console.log("Hello, " + name + "!"); // Function takes a parameter 'name'
 }
-// In this example, if the `age` is less than 18, the function returns early with the message "You are a minor.".
-// If the condition is not met, it continues to the next line and returns "You are an adult.".
-// This pattern allows you to handle specific conditions without deeply nesting your code, making it easier to read and maintain.
-// Example of early return pattern in a loop:  
-function getGrade(score) {
-    if(score >= 90 && score<=100) return "A";
-    if(score >= 80 && score < 90) return "B";
-    if(score >= 70 && score < 80) return "C";
-    if(score >= 60 && score < 70) return "D";
-    if(score >= 50 && score < 60) return "E";
-    if(score >= 40 && score < 50) return "F";
-    return "Invalid Score"; // Handle invalid scores
+greet("Alice"); // Calling the function with "Alice" as the argument
+greet("Bob"); // Calling the function with "Bob" as the argument
+// Output:
+// Hello, Alice!
+// Hello, Bob!
+
+// Function cannot be written with numbers, special characters, or spaces, keywords, or reserved words.
+// Function names should be descriptive and follow camelCase naming conventions.
+// Example of a function with a descriptive name:
+function calculateAreaOfCircle(radius) {
+    const pi = 3.14; // Using a constant for the value of pi
+    return pi * radius * radius; // Returns the area of the circle
 }
-getGrade(66)
-output:
-console.log(getGrade(66)); // "D"
+// Calling the function with a radius of 5
+let area = calculateAreaOfCircle(5);    
+console.log("Area of the circle: " + area); // Output: Area of the circle: 78.5
+// In this example, the function `calculateAreaOfCircle` takes a parameter `radius`
+// and returns the area of a circle using the formula πr². The function is called
+// with a radius of 5, and the result is printed to the console. 
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-Loops: Used to repeat a block of code multiple times.
-// Example: for, while, do-while, for...in, for...of , forEach                                   
-//while loop: 
-let i = 0;    // initialization
-while (i < 5) {    // condition
-    console.log(i); // Output: 0, 1, 2, 3, 4
-    i++;    // increment
+//Function can also be written as
+let fun = function(){
+    console.log("HIIIIIII");
 }
-// do-while loop: works at least once, even if the condition is false.
-let j = 0;    // initialization
-do {
-    console.log(j); // Output: 0, 1, 2, 3, 4
-    j++;    // increment
-}while (j < 5);    // condition
+fun();
 
-Break and Continue Statements: Used to control the flow of loops.
-// Example: break, continue
-// The `break` statement is used to exit a loop or switch statement prematurely.
-// The `continue` statement is used to skip the current iteration of a loop and move to the next iteration.
-// Example of break statement:
-for (let k = 0; k < 10; k++) {
-    if (k === 5) {
-        break; // Exit the loop when k is 5
-    }
-    console.log(k); // Output: 0, 1, 2, 3, 4
-}
-// Example of continue statement:
-for (let l = 0; l < 10; l++) {
-    if (l === 5) {
-        continue; // Skip the iteration when l is 5
-    }
-    console.log(l); // Output: 0, 1, 2, 3, 4, 6, 7, 8, 9
-}
-
-
+// Function Declaration
