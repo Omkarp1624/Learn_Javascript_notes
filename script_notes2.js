@@ -50,5 +50,63 @@ let fun = function(){
     console.log("HIIIIIII");
 }
 fun();
+----------------------------------------
+// Function declaration / statement
+function abcd(){
 
-// Function des
+}
+-----------------------------------------
+// function expression
+let fun = function(){
+
+}
+------------------------------------------
+//Fat Arrow Function  //()=>{}
+let fun () => {
+    console.log("this is fat arrow function")
+}
+fun();
+--------------------------------------------
+//Parameters and arguments
+
+function dance(animal){
+    console.log(`${animal} is dancing`); //Backticks are used to add Dynamic values
+}
+dance("horse");
+dance("cat");
+//output : 
+//horse is dancing
+//cat is dancing
+----------------------------------------------------------------------------------------------
+// addition using functions
+let add = function(v1, v2){ //v1,v2 parameters and they we can give define value like v1=0 and v2=0
+    console.log(v1 + v2);
+}
+add(1,2);  // 1,2 are arguments
+add(11,11);
+//output : 
+// 3
+// 22
+-------------------------------------------------------------------------------
+function add(v1,v2){
+    console.log(v1,v2); //output undefined undefinedm
+    console.log(v1+v2); // NaN
+}
+add();
+---------------------------------------------------------------------------------------
+//Rest and spread
+function abcd(...val){
+    console.log(val); 
+}
+abcd(1,2,3,4,5,6,7,8,9,10);
+//output:
+//1 2 3 4 5 6 7 8 9 10
+//when ever there are many arguments so we have to make all those parameters so insted of writing all the paramets we use rest and spread ...
+//  If ... are placed in parameter space then it is Rest operator
+// if ... are placed in Array and Objects then it is called Spread operator
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+//Return values and Early Returns
+
+// return matlab jaha se aya he vahi daal denge
+// return is always inside function
+// when ever the function works then  
