@@ -3,7 +3,7 @@ SET 1: VARIABLES AND DECLARATION
 //keyword is a reserved word in javascript, it cannot be used as a variable name
 // example of keywords: if, else, for, while, function, return, var, let, const, class, etc.
 // word is a general term that can refer to any string of characters, it can be used as a variable name
-// example of words: hello, world, javascript, variable, function, etc.
+// example of words: hello, world, javascript, variable etc.
 2) var vs let vs const
 // var is ES5 which is a older way of declaring variables, 
 // let and const are ES6 which is a newer way of declaring variables
@@ -12,7 +12,7 @@ SET 1: VARIABLES AND DECLARATION
 // variable are used for future use.
 // variable can be written as: var a = 12; or var a;
 //                             let a  = 12; or let a;
-// constant shold be written as const a = 12;
+// constant should be written as const a = 12;
 // we cannot write :            const a;
 3) Declaration vs Initialization
 // Declaration is the process of creating a variable or function without assigning a value to it.
@@ -24,11 +24,11 @@ SET 1: VARIABLES AND DECLARATION
 
 // we can declare the variable again and again, but we cannot initialize it again and again.
 // For example, if you declare a variable `var x;` and then initialize it with
-// `x = 10;`, you can later re-declare it with `var x;` again, but you cannot initialize it again with `x = 20;`
+// `x = 10;`, you can later re-declare it with `var x;` again, you can initialize it again with `x = 20;`
 // example for above statement:
 var x; // Declaration
 x = 10; // Initialization
-// x = 20; // Re-initialization (not allowed)
+// x = 20; // Re-initialization (allowed)
 // re-declaration example:
 var x; // Declaration
 x = 10; // Initialization
@@ -43,6 +43,10 @@ y = 20; // Initialization
 // const z = 30; // Declaration and Initialization
 // z = 40; // Re-initialization (not allowed, will throw an error)
 
+// Feature            	var	          let	        const
+// Reinitialization	✅ Allowed	✅ Allowed   	❌ Not Allowed
+// Redeclaration	✅ Allowed	❌ Not Allowed	❌ Not Allowed
+// Scope	           Function	     Block	           Block
 
 // a variable is added into a window object when it is declared.
 // For example, if you declare a variable `var x = 10;`, it becomes
@@ -106,7 +110,7 @@ if (true) {
     console.log(blockScopedVar); // "I am block scoped"
 }
 
-//wher as var is function scoped, meaning it is accessible within the entire function in which it is declared.
+//where as var is function scoped, meaning it is accessible within the entire function in which it is declared.
 // Example of function scope with var:
 function myFunction() {
     var functionScopedVar = "I am function scoped"; // Function scope
@@ -142,7 +146,7 @@ var y = 10; // Declaration and Initialization
 // In summary, the Temporal Dead Zone is a feature of `let` and `const` that prevents accessing variables before they are declared,
 // while `var` does not have this restriction and allows accessing variables before their declaration, returning `undefined` instead of throwing an error.
 // Always use `let` or `const` to avoid issues with TDZ and to have better control over variable scope.
-// tdz is a concept who knows thhat the variable exists but it is not yet initialized and it cant give you the value of the variable.
+// tdz is a concept who knows that the variable exists but it is not yet initialized and it cant give you the value of the variable.
 // Example of TDZ with const:
 console.log(z); // ReferenceError: Cannot access 'z' before initialization
 const z = 15; // Declaration and Initialization
