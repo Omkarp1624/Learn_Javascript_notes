@@ -197,3 +197,19 @@ abc.addEventListener("input",function(details){
 
 //3) change
 // change event will work when your input, select or textarea has changes
+//HTML Code
+<h1 id = "device">Select any one option</h1>
+    <select>
+        <option selected disabled>Choose your device</option>
+        <option value = "samusung">Samsung</option>
+        <option value = "redmi ">xiomi</option>
+        <option value = "vivo">vivo</option>
+        <option value = "Oppo">Oppo</option>
+    </select>
+
+//JavaScript Code
+let abc = document.querySelector("select");
+let aaa = document.querySelector(".device");
+abc.addEventListener("change",function(details){
+    device.textContent = `${details.target.value} device selected `
+});
