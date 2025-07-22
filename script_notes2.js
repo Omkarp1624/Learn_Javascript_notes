@@ -174,4 +174,26 @@ p.removeEventListener("click",function(){
 })
 -----------------------------------------------
 //COMMON EVENTS:
+//1) click
+let abcd = document.querySelector("h1");
+abcd.addEventListener("click",function(){
+    p.style.color = "red";
+})
 
+// 2) input
+let abcd = document.querySelector("input");
+abcd.addEventListener("input",function(details){
+    console.log(details.data)
+});
+// output what ever we type in the input will be displayed on the console.
+
+let abc = document.querySelector("input");
+abc.addEventListener("input",function(details){
+    if(details.data !== null){
+        console.log(details.data);
+    }
+});
+// this will print what ever we write on the input to the console one below other , except for backspace.
+
+//3) change
+// change event will work when your input, select or textarea has changes
