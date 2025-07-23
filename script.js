@@ -1,6 +1,16 @@
-let abc = document.querySelector("select");
-let aaa = document.querySelector(".device");
-
-abc.addEventListener("change",function(details){
-    device.textContent = `${details.target.value} device selected `
-});
+let a = document.querySelector(".a");
+let b = document.querySelector(".b");
+let c = document.querySelector(".c");
+let btn = document.querySelector("button");
+btn.addEventListener("click",function(){
+    console.log("button clicked");
+})
+c.addEventListener("click",function(){
+    console.log("c clicked");
+})
+b.addEventListener("click",function(){
+    console.log("b clicked");
+})
+a.addEventListener("click",function(){
+    console.log("a clicked");
+})

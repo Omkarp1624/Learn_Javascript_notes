@@ -179,7 +179,7 @@ let abcd = document.querySelector("h1");
 abcd.addEventListener("click",function(){
     p.style.color = "red";
 })
-
+------------------------------------------------------------------------------------
 // 2) input
 let abcd = document.querySelector("input");
 abcd.addEventListener("input",function(details){
@@ -194,7 +194,7 @@ abc.addEventListener("input",function(details){
     }
 });
 // this will print what ever we write on the input to the console one below other , except for backspace.
-
+---------------------------------------------------------------------------------------------------------------------
 //3) change
 // change event will work when your input, select or textarea has changes
 //HTML Code
@@ -213,3 +213,175 @@ let aaa = document.querySelector(".device");
 abc.addEventListener("change",function(details){
     device.textContent = `${details.target.value} device selected `
 });
+---------------------------------------------------------------------------
+//3) submit
+
+//HTML Code
+
+
+//<form>
+//    <input type = "text" placeholder = "name">
+//    <input type = "number" placeholder ="age">
+//    <input type = "text" placeholder = "email">
+//    <input type = "submit">
+// </form>
+
+let form = document.querySelector("form");
+form.addEventListener("submit",function(details){
+    details.preventDefault();  // By this way we can prevent the page to reload when ever we click on sumbit
+    console.log(
+        inputs[0].value,
+        inputs[1].value,
+        inputs[2].value,
+        inputs[3].value
+    );
+})
+-----------------------------------------------------------------------------------------------
+//4) mouseover and mouseout
+// HTML Code:
+<style>
+    *{
+        margin:0;
+        padding:0;
+        font-family:"gilroy";
+        box-sizing: border-box;
+    }
+    html,
+    body{
+        width:100%;
+        height:100%;
+    }
+    #abcd{
+        width:400px;
+        height:400px;
+        background-color: red;
+    }
+</style>
+
+//JavaScfipt Code:
+
+let abc = document.querySelector("#abcd");
+abc.addEventListener("mouseover",function(){
+    abc.style.backgroundColor = "yellow";
+})
+abc.addEventListener("mouseout",function(){
+    abc.style.backgroundColor = "red";
+})
+------------------------------------------------
+// 5)mousemove
+//HLML code
+ body{
+        position : relative;
+        overflow : hidden;
+    }
+    #abcd{
+        position : absolute;
+        transition: all cubic-bezier(0.19, 1, 0.22, 1).2s;
+        width:400px;
+        height:400px;
+        background-color: red;
+    }
+</style>
+<body>
+<div id="abcd"></div>
+</body>
+
+//JavaScript Code
+let abc = document.querySelector("#abcd");
+window.addEventListener("mousemove", function(details){
+    abc.style.top = details.clientY + "px";
+    abc.style.left = details.clientX + "px";
+});
+---------------------------------------------------------------------
+// Event Object:
+abc.addEventListener("click", function(dets){
+    console.log(dets)
+})
+// dets is called as Event Object
+-----------------------------------------------
+// Event Bubbling 
+// On which, event comes and if on that event if there is no 
+// listener then our event will search event on its parent for the listener
+// and by doing this it will move towards upwards
+ // HTML Code
+<body>
+    <div id = "main">
+    <div id = "nav">
+        <a href = " ">Home</a>
+        <a href = " "> about</a>
+        <button> click here</button>
+    </div>
+</div>
+</body>
+
+//JavaScript Code
+document.querySelector("#nav");
+.addEventListener("click",function{
+    alert("clicked");
+});
+---------------------------------------------------
+<body>
+    <ul>
+        <li>apple</li>
+        <li>mango</li>
+        <li>pine apple</li>
+        <li>guava</li>
+        <li>banana</li>
+    </ul>
+</body>
+--
+let abc = document.querySelector("ul");
+abc.addEventListener("click",function(dets){
+    dets.target.style.textDecoration = "line-through"
+})
+
+-------------------------------------------------------------
+//Event Bubbling one more Ex:
+// all the events will work here
+ 
+//HTML Code
+.a{
+    width : 80%;
+    height : 80%;
+    background-color: aqua;
+}
+.b{
+    width : 80%;
+    height : 80%;
+    background-color: rgb(136, 30, 87);
+}
+.c{
+    width : 80%;
+    height : 80%;
+    background-color: rgb(112, 189, 25);
+}
+
+</style>
+<div class="a">
+    <div class="b">
+        <div class="c">
+            <button> Click me
+            </button>
+        </div>
+    </div>
+</div>
+</body>
+// JavaScript Code
+let a = document.querySelector(".a");
+let b = document.querySelector(".b");
+let c = document.querySelector(".c");
+let btn = document.querySelector("button");
+btn.addEventListener("click",function(){
+    console.log("button clicked");
+})
+c.addEventListener("click",function(){
+    console.log("c clicked");
+})
+b.addEventListener("click",function(){
+    console.log("b clicked");
+})
+a.addEventListener("click",function(){
+    console.log("a clicked");
+})
+------------------------------------------
+// when ever you click or elkse click an event 
