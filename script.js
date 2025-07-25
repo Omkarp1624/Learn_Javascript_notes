@@ -1,16 +1,11 @@
-let a = document.querySelector(".a");
-let b = document.querySelector(".b");
-let c = document.querySelector(".c");
-let btn = document.querySelector("button");
-btn.addEventListener("click",function(){
-    console.log("button clicked");
-})
-c.addEventListener("click",function(){
-    console.log("c clicked");
-})
-b.addEventListener("click",function(){
-    console.log("b clicked");
-})
-a.addEventListener("click",function(){
-    console.log("a clicked");
-})
+let email=document.querySelector("#email");
+let password=document.querySelector("#password");
+let form=document.querySelector("#validatorForm");
+form.addEventListener("submit",function(dets){
+    dets.preventDefault();
+    let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    let passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=!]).{8,}$/;
+    let emailans = emailRegex.test(email.value);
+    let passwordans = passwordRegex.test(password.value);
+    console.log(emailans);
+});

@@ -337,7 +337,8 @@ abc.addEventListener("click",function(dets){
 
 -------------------------------------------------------------
 //Event Bubbling one more Ex:
-// all the events will work here
+// Inside to Outside is called Event Bubbling
+// Outside to Insidde is Called Event capturing 
  
 //HTML Code
 .a{
@@ -384,4 +385,25 @@ a.addEventListener("click",function(){
     console.log("a clicked");
 })
 ------------------------------------------
-// when ever you click or elkse click an event 
+//Event Capturing
+// when ever you click or else raise an event then the event flow is in two phases
+// Phase 1: Event comes from top level element to the bottom.
+// Phase 2: Event comes from raised element to parent.
+//First phase 1 happens.
+
+a.addEventListener("click",function(){
+    console.log("a clicked");
+},true)
+
+---------------------------------------------------------------------------------------------
+// Forms and Form Validations
+-----------------------------
+// inLine
+//<input required minlength="3" maxLength="10" id="name" type = "text" placeholder="name">
+        -------------------------------------
+//<input required patten="[a-z]{3,3}" id="name" type = "text" placeholder="name"> //Rarely Used
+       ----------------------------
+//Regex "mostlyn Used"
+// we can easily get from cgatGPT // no need to remember
+// regex.test will give true or false values on console.
+// Prompt will be : Create a regex for user name.
