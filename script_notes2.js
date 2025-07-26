@@ -451,3 +451,50 @@ let interval = setInterval(function(){
 }, 1000);
 ----------------------------------------
 
+//LocalStorage, SessionStorage, Cookies
+---------------------------------------
+// LocalStorage: stores our Data in the Browser. Even if we close the browser the data will not Vanish. // 5Mb
+// SessionStorage: Data is Stored Temprarily ,If we store any data in the Session storage then data will vanish when we close the Tab. //5Mb
+// Cookies: they can handle/store less Data // 4kb 
+
+// locatStorage:
+// How to Store:
+localStorage.seItem("name","Omkar");
+// How to Fetch
+localStorage.getItem("name");
+//How to Remove
+localStorage.removeItem("name");
+//Update Item
+localStorage.setItem("name","harsh");
+//Clear Item
+localStorage.clear()
+
+// SessionStorage : when we close the tab our sesssion/data will we gone, used in storing the temporary Data
+// How to Store:
+SessionStorage.setItem("name","omkar");
+//.
+//.
+// All are same as localStorage
+
+// Cookies:
+// In the browser to Store small data we use Cookies.
+// In the cookies what ever data we store that data on the page reload will automatically go on server.
+// How to set Cookie on Browser:
+document.cookie = "email = omkar@gmail.com"
+-----------------------------------------------
+// In localStorage we can only store String.
+// Even if we write an array or object then it will store them as a String.
+localStorage.setItem("friends",["om","suresh","ramesh"]);
+localStorege.setItem("friend",{one:"akash",two:"ramesh"});
+// The above two are converted into string on then console
+JSON.stringify([1,2])
+//ans: [1,2]
+//JSON.stringify will convert array into a string because localStorage can only store Strings.
+//Example:
+localStorage.setItem("friends",JSON.stringify(["omkar","ramesh","mahesh"]))
+// will give the output in the form of String //["omkar","ramesh","mahesh"]
+JSON.parse('["omkar","ramesh","mahesh"]')
+// Output: ['omkar','ramesh','mahesh'] // Is an Array
+// Will convert the string into its natural form.
+JSON.parse(localStorage.getItem("friends"));
+------------------------------------------------------------------------------------------------------------------
