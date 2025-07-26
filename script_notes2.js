@@ -407,3 +407,47 @@ a.addEventListener("click",function(){
 // we can easily get from cgatGPT // no need to remember
 // regex.test will give true or false values on console.
 // Prompt will be : Create a regex for user name.
+
+------------------------------------------------------------------
+//Timers and Intervals
+//SetTimeOut
+// It is a function which accepts two parameters
+// 1st parameter is a function which we want to execute after some time
+// 2nd parameter is the time in milliseconds
+// 1sec = 1000 milliseconds
+setTimeout(function(){
+    console.log("Hello, this is a message after 2 seconds");
+},2000)
+//setInterval
+// It is a function which accepts two parameters
+// 1st parameter is a function which we want to execute repeatedly after some time
+// 2nd parameter is the time in milliseconds
+setInterval(function(){
+    console.log("Hello, this is a message every 5 seconds");
+},5000)
+
+// Difference between setTimeout and setInterval
+// setTimeout executes the function once after the specified time, while setInterval executes the function repeatedly at the specified interval.
+// setTimeout is used for one-time delays, while setInterval is used for repeated actions.
+// To stop the setInterval, we can use clearInterval
+// To stop the setTimeout, we can use clearTimeout
+// Example for setTimeout and setInterval 
+let timeoutId = setTimeout(function() {
+    console.log("This will not execute");
+}, 3000);
+clearTimeout(timeoutId); // This will prevent the timeout from executing
+let intervalId = setInterval(function() {
+    console.log("This will execute every 2 seconds");
+}, 2000);
+clearInterval(intervalId); // This will stop the interval from executing 
+--------------------------------------
+//On console the otput will be 9 8 7 6 5 4 3 2 1 will a regular interval
+let count = 10;
+let interval = setInterval(function(){
+    if(count>=1){
+    count--;
+    console.log(count);
+}    else clearInterval(interval);
+}, 1000);
+----------------------------------------
+
