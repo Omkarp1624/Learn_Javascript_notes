@@ -49,7 +49,7 @@ c(); // output: 10
 // Example of clousures:
 function count(){
     let a= 0;
-    returnn function(){
+    return function(){
         if(a<5){
             console.log(`count is ${a}`)
         }
@@ -67,3 +67,43 @@ fun();      // output: count is 4
 fun();      // output: count exceeded 5
 -----------------------------------------------
 // Toaster 
+function toaster() {
+    let toastCount = 0; // private variable
+
+    return function() {
+        if (toastCount < 5) {
+            toastCount++;
+            console.log(`Toasted ${toastCount} times`);
+        } else {
+            console.error("Maximum toast limit reached");
+        }
+    };
+}
+let toast = toaster();
+toast(); // output: Toasted 1 times
+toast(); // output: Toasted 2 times
+toast(); // output: Toasted 3 times
+toast(); // output: Toasted 4 times
+toast(); // output: Toasted 5 times
+toast(); // output: Maximum toast limit reached
+------------------------------------------------------
+// this keyword is a special keyword in JavaScript that refers to the context in which a function is called.
+// The value of `this` depends on how a function is called, and it can refer to different objects in different contexts.    
+// In a global context, `this` refers to the global object (e.g., `window` in browsers).
+// In a function context, `this` refers to the object that called the function.
+// In an object method, `this` refers to the object that the method belongs to.
+// In a constructor function, `this` refers to the newly created object.
+// function inside a object is  called method
+// In a method, `this` refers to the object that the method is called on.
+let obj = {
+    name: "John",
+    greet: function() {
+        console.log(`Hello, my name is ${this.name}`);
+    }
+};  
+obj.greet(); // output: Hello, my name is John      
+// In this example, `this` refers to the `obj` object, allowing access to its `name` property.
+--------------------------------------------------------------------------------------------------------------
+// call apply bind
+// The `call`, `apply`, and `bind` methods are used to change the context of `this` in a function.
+// They allow you to explicitly set the value of `this` when calling a function.
