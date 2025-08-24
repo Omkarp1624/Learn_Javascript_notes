@@ -107,3 +107,25 @@ obj.greet(); // output: Hello, my name is John
 // call apply bind
 // The `call`, `apply`, and `bind` methods are used to change the context of `this` in a function.
 // They allow you to explicitly set the value of `this` when calling a function.
+------------------------------------------------------------------------------------------------------------
+
+// Synchronous
+// The code which will execute line by line is called synchronous code.
+// Asynchronous
+// The code which will not execute line by line is called asynchronous code.
+// An asynchronous code will run whern it is ready and the rest of the code will keep executing.
+------------------------------------------------------------------------------
+// Callback
+// A callback is a function that is passed as an argument to another function and is executed after some operation is completed.
+// Callbacks are commonly used in asynchronous programming to handle operations that take time to complete, such as API requests or timers.
+------------------------------------------------------------------------------
+// Promise
+// A promise is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+// A promise can be in one of three states: pending, fulfilled, or rejected. 
+---------------------------------------------------------------------------------------------
+// Async/Await
+// Async/Await is a syntactic feature in JavaScript that allows you to write asynchronous code in a more synchronous manner.
+// It is built on top of promises and makes working with asynchronous code easier and more readable.
+// The `async` keyword is used to declare a function as asynchronous, and the `await` keyword is used to pause the execution of the function until a promise is resolved.   
+// This allows you to write code that looks and behaves like synchronous code, while still being asynchronous under the hood.
+---------------------------------------------------------------------------------------------
