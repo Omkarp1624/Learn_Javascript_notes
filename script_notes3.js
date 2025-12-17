@@ -21,7 +21,7 @@ function outerFunction() {
         console.log(outerVariable);
     }
     innerFunction();
-}
+} 
 outerFunction();   
 // In this example, `innerFunction` has access to `outerVariable` because it is defined within the scope of `outerFunction`.
 // Lexical scope is a fundamental concept in JavaScript that allows functions to access variables from their parent functions.
@@ -102,11 +102,30 @@ let obj = {
     }
 };  
 obj.greet(); // output: Hello, my name is John      
-// In this example, `this` refers to the `obj` object, allowing access to its `name` property.
+// In this example, `this` refers to the `obj` object, allowing access to its `name` property. 
+
+this ki value
+---------------
+global - In a global context, `this` refers to the global object (e.g., `window` in browsers).
+function - window
+method with ES5 fnc - object
+method with ES6 arrow fnc - window
+ES5 function inside ES5 method - window
+arrow function inside ES5 method - object
+event handler - Element
+class - blank object
 --------------------------------------------------------------------------------------------------------------
 // call apply bind
 // The `call`, `apply`, and `bind` methods are used to change the context of `this` in a function.
 // They allow you to explicitly set the value of `this` when calling a function.
+
+//apply
+// apply is also used as call but it takes arguments as an array
+//(it does not call more than two arguments, first is the value of this and second is an array of arguments)
+// bind
+// bind method creates a new function that, when called, has its `this` keyword set to the provided value.
+// It doesn't makes array of arguments like apply
+
 ------------------------------------------------------------------------------------------------------------
 
 // Synchronous
@@ -129,3 +148,18 @@ obj.greet(); // output: Hello, my name is John
 // The `async` keyword is used to declare a function as asynchronous, and the `await` keyword is used to pause the execution of the function until a promise is resolved.   
 // This allows you to write code that looks and behaves like synchronous code, while still being asynchronous under the hood.
 ---------------------------------------------------------------------------------------------
+//OOPs:
+-------
+function CreatePencil(company,price,quantity){ // CreatePencil is a constructor function whose first letter is capital
+    this.company = company; // this refers to the object that is being created, Creates blank object
+    this.price = price;
+    this .quantity = quantity;
+}
+let pencil1 = new CreatePencil("Apsara",10,100);
+let pencil2 = new CreatePencil("Nataraj",15,200);
+-----------------------------------------
+//Prototype will have a shared memory space for all the objects created from a constructor function.
+CreatePencil.prototype.color = "Yellow"; 
+console.log(pencil1.color); // output: Yellow
+console.log(pencil2.color); // output: Yellow
+-----------------------------------------
