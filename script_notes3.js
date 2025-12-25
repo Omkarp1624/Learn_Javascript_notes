@@ -127,27 +127,6 @@ class - blank object
 // It doesn't makes array of arguments like apply
 
 ------------------------------------------------------------------------------------------------------------
-
-// Synchronous
-// The code which will execute line by line is called synchronous code.
-// Asynchronous
-// The code which will not execute line by line is called asynchronous code.
-// An asynchronous code will run whern it is ready and the rest of the code will keep executing.
-------------------------------------------------------------------------------
-// Callback
-// A callback is a function that is passed as an argument to another function and is executed after some operation is completed.
-// Callbacks are commonly used in asynchronous programming to handle operations that take time to complete, such as API requests or timers.
-------------------------------------------------------------------------------
-// Promise
-// A promise is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
-// A promise can be in one of three states: pending, fulfilled, or rejected. 
----------------------------------------------------------------------------------------------
-// Async/Await
-// Async/Await is a syntactic feature in JavaScript that allows you to write asynchronous code in a more synchronous manner.
-// It is built on top of promises and makes working with asynchronous code easier and more readable.
-// The `async` keyword is used to declare a function as asynchronous, and the `await` keyword is used to pause the execution of the function until a promise is resolved.   
-// This allows you to write code that looks and behaves like synchronous code, while still being asynchronous under the hood.
----------------------------------------------------------------------------------------------
 //OOPs:
 -------
 function CreatePencil(company,price,quantity){ // CreatePencil is a constructor function whose first letter is capital
@@ -162,4 +141,97 @@ let pencil2 = new CreatePencil("Nataraj",15,200);
 CreatePencil.prototype.color = "Yellow"; 
 console.log(pencil1.color); // output: Yellow
 console.log(pencil2.color); // output: Yellow
------------------------------------------
+---------------------------------------------
+// Extends and Super
+// Already there is a class and you make one new class ..and this new class can use all the values of previous class and also hold it's own.
+---
+// classes banana and unhe extend kardena is called as classical inhetritance
+// Prototypal inheritance:
+// ek object hai aap chaaho to uski saari props/methods ko inherit hara dete ho doosre object mein
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Synchronous
+// The code which will execute line by line is called synchronous code.
+console.log("hey1");
+console.log("hey2");
+console.log("hey3");
+console.log("hey4");
+// output : hey1
+//          hey2
+//          hey3
+//          hey4
+
+// Asynchronous
+// The code which will not execute line by line is called asynchronous code.
+// An asynchronous code will run when it is ready and the rest of the code will keep executing.
+console.log("hey1");
+console.log("hey2");
+setTimeout(() => {
+    console.log("hey3");
+}, 2000);
+console.log("hey3");
+console.log("hey4");
+// output : hey1
+//          hey2
+//          hey4
+//          hey3
+------------------------------------------------------------------------------
+// Callback
+// A callback is a function that is passed as an argument to another function and is executed after some operation is completed.
+// Callbacks are commonly used in asynchronous programming to handle operations that take time to complete, such as API requests or timers.
+function kuchDerBaadChalunga(fnc){
+    setTimeout(fun, Math.floor(Math.random() * 20) * 1000);
+}
+kuchhDerBaadChalunga(function () {
+    console.log("hey");
+});
+// The above function is called as call back
+------------------------------------------------------------------------------
+// Promise
+// A promise is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+// A promise can be in one of three states: pending, fulfilled, or rejected. 
+// If its going to resolve ".then()"
+// If its going to reject ".catch()"
+
+let pr = new Promise(function(res, rej){
+    setTimeout(() => {
+        let rn = Math.floor(Math.random() * 10);
+        if(rn > 5) res("Resolved with " + rn);
+        else rej("Rejected with " + rn);
+    }, 3000);
+});
+pr.then(function val(){
+    console.log(val);
+}).catch(function(val){
+    console.log(val);
+});
+// Output:
+// if number is greater than 5 then result is // Resolved with 7
+// Rejected with 2
+---------------------------------------------------------------------------------------------
+// Async/Await
+// Async/Await is a syntactic feature in JavaScript that allows you to write asynchronous code in a more synchronous manner.
+// It is built on top of promises and makes working with asynchronous code easier and more readable.
+// The `async` keyword is used to declare a function as asynchronous, and the `await` keyword is used to pause the execution of the function until a promise is resolved.   
+// This allows you to write code that looks and behaves like synchronous code, while still being asynchronous under the hood.
+
+let pr = new Promise(function(res, rej){
+    setTimeout(() => {
+        let rn = Math.floor(Math.random() * 10);
+        if(rn > 5) res("Resolved with " + rn);
+        else rej("Rejected with " + rn);
+    }, 3000);
+});
+async function abcd(){
+    try{
+        let val = await pr;
+        console.log(val);
+    } catch (err) {
+        console.log(err);
+    }
+}
+abcd();
+---------------------------------------------------------------------------------------------
+ 
+// Fetch API + HTTP Basics
+// Fetch API: GET, POST basics
