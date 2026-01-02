@@ -33,7 +33,7 @@ console.dir(abcd);
 <h1 class="abcd">"My name is omkar</h1>
 // JS code to select element by class
 // we will get an array like structure at console
-let abcd = document=getElementsbyClassName("abcd");
+let abcd = document.getElementsByClassName("abcd");
 console.log(abcd)
 // It will return HTMLCollection in the console which is same as a Array
 //3)Most/Always Used
@@ -219,12 +219,12 @@ abc.addEventListener("change",function(details){
 //HTML Code
 
 
-//<form>
-//    <input type = "text" placeholder = "name">
-//    <input type = "number" placeholder ="age">
-//    <input type = "text" placeholder = "email">
-//    <input type = "submit">
-// </form>
+<form>
+   <input type = "text" placeholder = "name">
+   <input type = "number" placeholder ="age">
+   <input type = "text" placeholder = "email">
+   <input type = "submit">
+</form>
 
 let form = document.querySelector("form");
 form.addEventListener("submit",function(details){
@@ -258,7 +258,7 @@ form.addEventListener("submit",function(details){
     }
 </style>
 
-//JavaScfipt Code:
+//JavaScript Code:
 
 let abc = document.querySelector("#abcd");
 abc.addEventListener("mouseover",function(){
@@ -269,7 +269,7 @@ abc.addEventListener("mouseout",function(){
 })
 ------------------------------------------------
 // 5)mousemove
-//HLML code
+// HTML code
  body{
         position : relative;
         overflow : hidden;

@@ -130,3 +130,6 @@ let throttledScroll = throttle(logScroll, 200);
 // Lazy Loading
 // when ever we have to load a resource (like an image, script, or data) only when it is needed rather than loading it upfront then we use lazy loading and it improves performance and reduces initial load time.
 // There is no need to load the images which are not visible to the user at that moment.
+
+--------------------------------------------------------
+
